@@ -16,6 +16,10 @@ use App\Http\Controllers\ContactController;
 |
 */
 
+Route::get('/', function () {
+    return redirect()->route('list-people');
+});
+
 Route::get('/people-list', [PersonController::class, 'listPeople'])->name('list-people');
 Route::get('/add-person', [PersonController::class, 'addPersonForm'])->name('add-person');
 Route::post('/add-person', [PersonController::class, 'addPerson']);
